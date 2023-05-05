@@ -1,0 +1,18 @@
+# action.yml
+name: 'create code references from folder'
+description: 'Provided a src folder with python files create a markdown version of the code references'
+inputs:
+  src: 
+    description: 'path to the source folder'
+    required: true
+    default: 'src'
+  out-file: 
+    description: 'path to the generated file'
+    required: true
+    default: 'docs/code-reference.md'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.src }}
+    - ${{ inputs.out-file }}
