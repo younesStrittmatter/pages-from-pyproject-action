@@ -1,18 +1,24 @@
 # action.yml
-name: 'create code references from folder'
-description: 'Provided a src folder with python files create a markdown version of the code references'
+name: 'create index and quick start from pyproject.toml'
+description: 'Provided a pyproject.toml file create a markdown index and quick start page'
 inputs:
-  src: 
-    description: 'path to the source folder'
+  src-file: 
+    description: 'path to the pyproject.toml'
     required: true
-    default: 'src'
-  out-file: 
-    description: 'path to the generated file'
+    default: 'pyproject.toml'
+  out-file-index: 
+    description: 'path to the generated index file'
     required: true
-    default: 'docs/code-reference.md'
+    default: 'docs/index.md'
+  out-file-quick:
+    description: 'path to the generated quick_start file'
+    required: true
+    default: 'docs/quick_start.md'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.src }}
-    - ${{ inputs.out-file }}
+    - ${{ inputs.src-file }}
+    - ${{ inputs.out-file-index }}
+    - ${{ inputs.out-file-quick }}

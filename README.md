@@ -1,1 +1,1 @@
-GitHub action to automatically generate code references from a src directory
+GitHub action to automatically generate index and quickstart guide from a pyproject.toml file
