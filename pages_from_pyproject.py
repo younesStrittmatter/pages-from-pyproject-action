@@ -11,7 +11,7 @@ def create_index(file):
     markdown += f"GitHub repository: [{pyproject['project']['urls']['repository']}]({pyproject['project']['urls']['repository']})\n\n"
     markdown += "### Authors:\n\n"
     for a in pyproject['project']['authors']:
-        markdown += f"[{a['name']}](mailto: {a['email']})\n\n"
+        markdown += f"[{a['name']}](mailto:{a['email']})\n\n"
 
     return markdown
 
@@ -26,7 +26,7 @@ def create_quick_start(file):
     markdown += "!!! It is recommended to use a python environment manger like virualenv\n\n"
     markdown += "Install the package via pip:\n\n"
     markdown += "```shell\n"
-    pip_package_autora = "aurora[{}]".format(project['name'].replace("-", ""))
+    pip_package_autora = "autora[{}]".format(project['name'].replace("-", "", 1))
     markdown += f"pip install \"{pip_package_autora}\"\n"
     markdown += "```\n\n"
     markdown += '## Test\n\n'
