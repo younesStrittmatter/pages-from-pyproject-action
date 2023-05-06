@@ -29,8 +29,9 @@ def create_quick_start(file):
     pip_package_autora = "autora[{}]".format(project['name'].replace("-", "", 1))
     markdown += f"pip install \"{pip_package_autora}\"\n"
     markdown += "```\n\n"
-    markdown += '## Test\n\n'
-    markdown += "...\n\n"
+    markdown += 'Check your installation by running:\n\n'
+    markdown += "```shell\n"
+    markdown += "```\n\n"
     markdown += '## Dependencies\n\n'
     for d in project['dependencies']:
         markdown += f"{d}, "
