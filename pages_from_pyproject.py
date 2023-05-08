@@ -23,7 +23,7 @@ def create_quick_start(file):
     markdown += "# Quickstart Guide\n\n"
     markdown += "You will need:\n"
     markdown += f"`python` {project['requires-python']}: [https://www.python.org/downloads/](https://www.python.org/downloads/)\n\n"
-    markdown += "!!! It is recommended to use a python environment manger like virualenv\n\n"
+    markdown += "!!! It is recommended to use a python environment manger like virtualenv\n\n"
     markdown += "Install the package via pip:\n\n"
     markdown += "```shell\n"
     pip_package_autora = "autora[{}]".format(project['name'].replace("-", "", 1))
